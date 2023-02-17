@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
     public void saveUser(String name, String lastName, byte age) {
         userDaoJDBC.saveUser(name, lastName, age);
+        System.out.printf("User с именем - %s добавлен в базу данных.\n", name);
     }
 
     public void removeUserById(long id) {
@@ -26,7 +27,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-        return userDaoJDBC.getAllUsers();
+        List<User> users = userDaoJDBC.getAllUsers();
+        if (!users.isEmpty()) {
+            users.forEach(System.out::println);
+        }
+        return users;
     }
 
     public void cleanUsersTable() {
