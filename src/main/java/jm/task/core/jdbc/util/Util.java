@@ -44,7 +44,7 @@ public class Util {
                 prop.put(Environment.USER, LOGIN);
                 prop.put(Environment.PASS, PASSWORD);
                 prop.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-                prop.put(Environment.SHOW_SQL, "true");
+                prop.put(Environment.SHOW_SQL, "false");
                 prop.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 prop.put(Environment.HBM2DDL_AUTO, "none");
                 conf.setProperties(prop);
