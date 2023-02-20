@@ -25,9 +25,7 @@ public class Util {
     public static Connection getConnectionJDBC() throws SQLException {
         if (connection == null || connection.isClosed()) {
             try {
-                if (connection == null || connection.isClosed()) {
-                    connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
-                }
+                connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
             } catch (SQLException e) {
                 System.out.println("Не удалось подключиться к базе!");
                 e.printStackTrace();
@@ -37,9 +35,7 @@ public class Util {
     }
 
     public static SessionFactory getConnectionHibernate() {
-
         if (sessionFactory == null || sessionFactory.isClosed()) {
-
             try {
                 Configuration conf = new Configuration();
                 Properties prop = new Properties();
@@ -64,5 +60,4 @@ public class Util {
         }
         return sessionFactory;
     }
-
 }

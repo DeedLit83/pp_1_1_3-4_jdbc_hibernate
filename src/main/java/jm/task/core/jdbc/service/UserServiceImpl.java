@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     public List<User> getAllUsers() {
         List<User> users = userDaoHibernate.getAllUsers();
-        if (!users.isEmpty()) {
+        if (users != null && !users.isEmpty()) {
             users.forEach(System.out::println);
         }
         return users;
